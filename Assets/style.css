@@ -1,0 +1,142 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Upper Section */
+.upper-section {
+    background: linear-gradient(to right, #1384AB, #3cb371); /* Blue to Green */
+    color: white;
+    height: 50vh; /* Half of the screen */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.middle-box {
+    position: absolute;
+    top: 50%; /* Places the middle of the box at 50% of the viewport height */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the box both horizontally and vertically */
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    z-index: 10;
+}
+
+/* Upload Box Styling */
+.upload-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Upload Label Styling */
+.upload-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #1384AB;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Hide default file input */
+.upload-label input {
+    display: none;
+}
+
+/* Upload Note */
+.upload-note {
+    font-size: 0.9rem;
+    color: gray;
+}
+
+/* Analyze Button Styling */
+.analyze-btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #3cb371;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.analyze-btn:hover {
+    background: #2e8b57;
+}
+
+/* Make it Responsive */
+@media (max-width: 768px) {
+    .middle-box {
+        width: 90%;
+    }
+}
+
+/* Lower Section */
+.lower-section {
+    background: white;
+    color: black;
+    height: 50vh; /* Half of the screen */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Floating Emoji Animation */
+.emoji {
+    position: absolute;
+    font-size: 2rem; /* Adjust size if needed */
+    opacity: 1;
+    animation: moveRandom 18s linear infinite alternate;
+}
+
+/* Unique durations for different emojis to prevent synchronized motion */
+.emoji:nth-child(1) { animation-duration: 20s; animation-delay: 0s; }
+.emoji:nth-child(2) { animation-duration: 18s; animation-delay: 1s; }
+.emoji:nth-child(3) { animation-duration: 22s; animation-delay: 2s; }
+.emoji:nth-child(4) { animation-duration: 19s; animation-delay: 3s; }
+.emoji:nth-child(5) { animation-duration: 21s; animation-delay: 1.5s; }
+.emoji:nth-child(6) { animation-duration: 23s; animation-delay: 2.5s; }
+.emoji:nth-child(7) { animation-duration: 17s; animation-delay: 0.5s; }
+.emoji:nth-child(8) { animation-duration: 24s; animation-delay: 1.2s; }
+
+/* Keyframes for slow, random movement */
+@keyframes moveRandom {
+    0% { transform: translate(0, 0); }
+    20% { transform: translate(15px, -20px); }
+    40% { transform: translate(-10px, 15px); }
+    60% { transform: translate(20px, 10px); }
+    80% { transform: translate(-15px, -10px); }
+    100% { transform: translate(10px, 20px); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .upper-section, .lower-section {
+        height: 50vh;
+    }
+}
